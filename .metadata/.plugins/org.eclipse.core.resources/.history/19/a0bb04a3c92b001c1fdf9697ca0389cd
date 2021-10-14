@@ -1,0 +1,21 @@
+package LabTwo;
+import java.util.*;
+
+public class Lotto {
+	public int[] lottoNumbers;
+		
+	public Lotto() {
+		
+		Random random = new Random();		
+		this.lottoNumbers[0] = random.nextInt(9-1) + 1;
+		this.lottoNumbers[1] = random.nextInt(9-1) + 1;
+		this.lottoNumbers[2] = random.nextInt(9-1) + 1;
+	}
+	
+	public String DisplayArray() {
+		return String.format("%02d:%02d:%02d", lottoNumbers[0], lottoNumbers[1], lottoNumbers[2]);
+	}
+	
+	
+}
+

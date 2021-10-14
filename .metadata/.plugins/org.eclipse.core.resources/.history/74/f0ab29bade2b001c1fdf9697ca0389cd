@@ -1,0 +1,33 @@
+package LabTwo;
+import java.util.*;
+
+public class LottoTest {
+
+	public static void main(String[] args) {
+		
+		int gameCount = 6; 
+		
+		while (gameCount > 1 ) {  
+			Lotto lotto = new Lotto();		
+			Lotto.DisplayArray(lotto);
+			
+			Scanner input = new Scanner(System.in);		
+			System.out.printf("Please guess an integer between 3 and 27: ");		
+			int userGuess = input.nextInt();
+			
+			if (Lotto.sum == userGuess) {
+				System.out.println("Correct! ");
+				Lotto.sum = 0;
+				gameCount = 0;
+			} else {
+				System.out.println("Please try again");
+				Lotto.sum = 0;
+				if (gameCount = 0) {
+					System.out.println("Computer Wins");
+				}
+			}
+			
+			gameCount--;
+		}
+	}	
+}
