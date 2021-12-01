@@ -34,6 +34,7 @@ public class LabFour extends Application {
 	CheckBox volunteerBox, studentBox;
 	ListView<String> listView;
 	RadioButton radioCS, radioBusi;
+	ToggleGroup btnGroup;
 	String coursesCS[] = {"Python", "Java", "C#", "SQL"};
     String coursesBusi[] = {"Management", "Accounting", "Marketing", "Human Resources"};	
 	ComboBox<String> comBox;
@@ -79,8 +80,11 @@ public class LabFour extends Application {
      
     // button to display
     Button btnDisplay = new Button("Display");
+    Button btnClearAll = new Button("Clear");
     lpane.add(btnDisplay, 0, 7);
+    lpane.add(btnClearAll, 1, 7);
     btnDisplay.setOnAction(e -> displayEntries()); //calls method to display info to text area
+    btnClearAll.setOnAction(e -> ClearAll());
     
     // Center pane. check boxes
     studentBox = new CheckBox("Student Council");    
@@ -95,7 +99,7 @@ public class LabFour extends Application {
     flowPane.setPadding(new Insets(10,20,10,20));  
     radioCS = new RadioButton("Computer Science ");  //create radio buttons
     radioBusi = new RadioButton("Business");
-    ToggleGroup btnGroup = new ToggleGroup();
+    btnGroup = new ToggleGroup();
     radioCS.setToggleGroup(btnGroup);  //add radio buttons to same group to ensure only one can be selected
     radioBusi.setToggleGroup(btnGroup);
     flowPane.getChildren().add(radioCS);
@@ -147,7 +151,7 @@ public class LabFour extends Application {
     textArea = new TextArea();
     GridPane descArea = new GridPane();
     descArea.add(textArea, 0, 0);
-    textArea.setMaxWidth(1000);
+    textArea.setMaxWidth(700);
     
     // Place nodes in the pane     
     root.setRight(vBox2);
@@ -163,6 +167,7 @@ public class LabFour extends Application {
   }
   
   public void displayEntries() {
+	  textArea.clear();
 	  
 	  // display text field items
 	  String name = txtName.getText(); 
@@ -174,9 +179,8 @@ public class LabFour extends Application {
 	  String email = txtEmail.getText();
 	  textArea.appendText("Name: "+name+"\n"+"Address: "+addr+". "+city+", "+prov+". "+postal+"\nPhone: "+phone+"\nEmail: "+email+"\n");
 	  
-	  
 	  // display check box items
-	  if (volunteerBox.isSelected() & studentBox.isSelected()) {
+	  if (volunteerBox.isSelected() && studentBox.isSelected()) {
 		  textArea.appendText("Extracurriculars: On the Student Council and Volunteers\n");
 	  } else if (studentBox.isSelected()) {
 		  textArea.appendText("Extracurriculars: On the Student Council\n");
@@ -189,17 +193,25 @@ public class LabFour extends Application {
 	  textArea.appendText("Courses: "+listViewItems+"\n");
 	  
   }
+  
+  public void ClearAll() {
+	  textArea.clear();
+	  txtName.setText("");
+	  txtAddress.setText("");
+	  txtProvince.setText("");
+	  txtCity.setText("");
+	  txtPostal.setText("");
+	  txtPhone.setText("");
+	  txtEmail.setText("");
+	  volunteerBox.setSelected(false);
+	  studentBox.setSelected(false);
+	  radioCS.setSelected(false);
+	  radioBusi.setSelected(false);
+	  comBox.getItems().clear();
+	  listView.getItems().clear();
+  }
   	  
   public static void main(String[] args) {
 	    launch(args);
 	  }
 } 
-
-// Define a custom pane to hold a label in the center of the pane
-class CustomPane extends StackPane {
-  public CustomPane(String title) {
-    getChildren().add(new Label(title));
-    setStyle("-fx-border-color: red");
-    setPadding(new Insets(11.5, 12.5, 13.5, 14.5));
-  }
-}
