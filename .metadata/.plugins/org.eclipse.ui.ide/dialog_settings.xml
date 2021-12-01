@@ -6,6 +6,8 @@
 		<item key="SmartImportRootWizardPage.STORE_NESTED_PROJECTS" value="true"/>
 		<item key="SmartImportRootWizardPage.STORE_CONFIGURE_NATURES" value="true"/>
 		<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+			<item value="C:\Users\J\Desktop\Centennial\Semester 3\Java Programming\Workspace\Lesson7&amp;8Examples\src\javafxbasics"/>
+			<item value="C:\Users\J\Desktop\Centennial\Semester 3\Java Programming\Workspace\Lesson7&amp;8Examples"/>
 			<item value="C:\Users\J\Desktop\Centennial\Semester 3\Java Programming\Workspace"/>
 		</list>
 	</section>
@@ -17,5 +19,19 @@
 		<item key="DIALOG_FONT_NAME" value="1|Segoe UI|9.0|0|WINDOWS|1|-15|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI"/>
 	</section>
 	<section name="NewWizardAction">
+	</section>
+	<section name="ExternalProjectImportWizard">
+		<item key="WizardProjectsImportPage.STORE_NESTED_PROJECTS" value="false"/>
+		<item key="WizardProjectsImportPage.STORE_COPY_PROJECT_ID" value="true"/>
+		<item key="WizardProjectsImportPage.STORE_ARCHIVE_SELECTED" value="false"/>
+		<item key="WizardProjectsImportPage.STORE_CLOSE_CREATED_PROJECTS_ID" value="false"/>
+		<item key="WizardProjectsImportPage.STORE_HIDE_CONFLICTING_PROJECTS_ID" value="false"/>
+		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
+			<item value="C:\Users\J\Desktop\Lesson7&amp;8Examples\Lesson7&amp;8Examples"/>
+			<item value="C:\Users\J\Desktop\Centennial\Semester 3\Java Programming\Workspace\Lesson7&amp;8Examples"/>
+		</list>
+		<list key="WizardProjectsImportPage.STORE_ARCHIVES">
+			<item value=""/>
+		</list>
 	</section>
 </section>
