@@ -83,7 +83,7 @@ public class LabFour extends Application {
     Button btnClearAll = new Button("Clear");
     lpane.add(btnDisplay, 0, 7);
     lpane.add(btnClearAll, 1, 7);
-    btnDisplay.setOnAction(e -> displayEntries()); //calls method to display info to text area
+    btnDisplay.setOnAction(e -> DisplayEntries()); //calls method to display info to text area
     btnClearAll.setOnAction(e -> ClearAll());
     
     // Center pane. check boxes
@@ -114,9 +114,9 @@ public class LabFour extends Application {
     ObservableList<String> listCS = FXCollections.observableArrayList(coursesCS); //Turn string array into list for display
     ObservableList<String> listBusi = FXCollections.observableArrayList(coursesBusi);
     		
-    radioCS.setOnMouseClicked(mouseEvent -> { // Clears list then populates with courses from program    	
+    radioCS.setOnMouseClicked(mouseEvent -> { // clicking on radio button clears combo box, then adds appropriate courses   	
     	comBox.getItems().clear();
-    	comBox.getItems().addAll(listCS);    	  	
+    	comBox.getItems().addAll(listCS);     	  	
     });    
     radioBusi.setOnMouseClicked(mouseEvent -> {
     	comBox.getItems().clear();
@@ -166,7 +166,7 @@ public class LabFour extends Application {
     primaryStage.show(); // Display the stage
   }
   
-  public void displayEntries() {
+  public void DisplayEntries() {
 	  textArea.clear();
 	  
 	  // display text field items
