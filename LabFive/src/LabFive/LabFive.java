@@ -12,7 +12,7 @@ public class LabFive {
 	public static void main(String[] args) {
 		String[] suits = {"Hearts", "Diamonds", "Clubs", "Spades"};
 		List<String> list = new ArrayList<String>();		
-		Collections.addAll(list, suits); // adds string array to list
+		Collections.addAll(list, suits); // adds string array 'suits' to 'list'
 		
 		System.out.printf("Before sort: ");
 		String preSort = list.toString(); // convert list to string
